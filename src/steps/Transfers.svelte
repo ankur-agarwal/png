@@ -89,7 +89,7 @@
           Add Transfer
         </button>
 
-        <div class="flex flex-row ml-2">
+        <div class="flex flex-row ml-2 overflow-scroll space-x-2">
           {#each transfers as localTransfer}
             <span class="isolate inline-flex rounded-md shadow-sm">
               <button on:click={() => transfer = localTransfer} type="button" class="relative inline-flex items-center gap-x-1.5 rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
