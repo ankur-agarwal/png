@@ -2,10 +2,7 @@
   import ArrowSeparator from "$lib/components/Stepper/ArrowSeparator.svelte";
 
   export let steps = [];
-
-  const handleOnClick = (step) => {
-    console.log(step)
-  }
+  export let onClick;
 
 </script>
 
@@ -14,8 +11,15 @@
     {#each steps as step, index}
       <li class="relative md:flex md:flex-1">
         <!-- Completed Step -->
-        {#if step.completed}
-          <a on:click={() => handleOnClick(step)} class="group flex w-full items-center">
+        {#if step.current}
+          <button on:click={() => onClick(step, index)} class="cursor-pointer flex items-center px-6 py-4 text-sm font-medium" aria-current="step">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-sky-600">
+              <span class="text-sky-600">{step.number}</span>
+            </span>
+            <span class="ml-4 text-sm font-medium text-sky-600">{step.title}</span>
+          </button>
+        {:else if step.completed}
+          <button on:click={() => onClick(step, index)} class="cursor-pointer group flex w-full items-center">
             <span class="flex items-center px-6 py-4 text-sm font-medium">
               <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-sky-600 group-hover:bg-sky-800">
                 <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -24,23 +28,16 @@
               </span>
               <span class="ml-4 text-sm font-medium text-gray-900">{step.title}</span>
             </span>
-          </a>
-        {:else if step.current}
-          <a href="#" class="flex items-center px-6 py-4 text-sm font-medium" aria-current="step">
-            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-sky-600">
-              <span class="text-sky-600">{step.number}</span>
-            </span>
-            <span class="ml-4 text-sm font-medium text-sky-600">{step.title}</span>
-          </a>
+          </button>
         {:else}
-          <a href="#" class="group flex items-center">
+          <button disabled on:click={() => onClick(step, index)} class="cursor-pointer group flex items-center">
             <span class="flex items-center px-6 py-4 text-sm font-medium">
               <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-gray-300 group-hover:border-gray-400">
                 <span class="text-gray-500 group-hover:text-gray-900">{step.number}</span>
               </span>
               <span class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">{step.title}</span>
             </span>
-          </a>
+          </button>
         {/if}
 
         {#if index < steps.length - 1}

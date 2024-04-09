@@ -47,6 +47,9 @@
   }];
 
   const handleNext = () => {
+    if (currentStep === steps.length - 1) {
+      return;
+    }
     // update current step
     steps[currentStep].current = false;
 
@@ -55,6 +58,14 @@
 
     // move to next step
     currentStep += 1;
+    steps[currentStep].current = true;
+  };
+
+  const handleStepperClick = (step, index) => {
+    // update current step
+    steps[currentStep].current = false;
+
+    currentStep = index;
     steps[currentStep].current = true;
   };
 
@@ -69,7 +80,7 @@
       </h2>
 
       <div class="mt-8">
-        <Stepper steps={steps} />
+        <Stepper steps={steps} onClick={handleStepperClick} />
       </div>
     </div>
 
