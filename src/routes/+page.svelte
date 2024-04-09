@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <main class="flex-1 max-w-7xl mt-8">
+    <main class="flex-1 max-w-7xl mt-8 h-3/4 overflow-scroll">
       <div>
         <ControllerConfig />
       </div>
