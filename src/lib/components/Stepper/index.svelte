@@ -1,37 +1,7 @@
 <script>
   import ArrowSeparator from "$lib/components/Stepper/ArrowSeparator.svelte";
 
-  const steps = [{
-    number: 1,
-    title: 'Controller Config',
-    id: 'controller-config',
-    completed: true,
-    current: false,
-  }, {
-    number: 2,
-    title: 'Purpose for Processing',
-    id: 'purpose-for-processing',
-    completed: false,
-    current: true,
-  }, {
-    number: 3,
-    title: 'Recipients of Data',
-    id: 'recipients-of-data',
-    completed: false,
-    current: false,
-  }, {
-    number: 3,
-    title: 'Automated Decision Making',
-    id: 'automated-decision-making',
-    completed: false,
-    current: false,
-  }, {
-    number: 3,
-    title: 'Transfers to 3rd Countries',
-    id: 'transfers-to-3rd-countries',
-    completed: false,
-    current: false,
-  }]
+  export let steps = [];
 
   const handleOnClick = (step) => {
     console.log(step)
@@ -58,7 +28,7 @@
         {:else if step.current}
           <a href="#" class="flex items-center px-6 py-4 text-sm font-medium" aria-current="step">
             <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-sky-600">
-              <span class="text-sky-600">02</span>
+              <span class="text-sky-600">{step.number}</span>
             </span>
             <span class="ml-4 text-sm font-medium text-sky-600">{step.title}</span>
           </a>
@@ -66,7 +36,7 @@
           <a href="#" class="group flex items-center">
             <span class="flex items-center px-6 py-4 text-sm font-medium">
               <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-gray-300 group-hover:border-gray-400">
-                <span class="text-gray-500 group-hover:text-gray-900">03</span>
+                <span class="text-gray-500 group-hover:text-gray-900">{step.number}</span>
               </span>
               <span class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">{step.title}</span>
             </span>
