@@ -90,8 +90,8 @@
       </label>
 
       <span id="dataProtectionOfficer" class="isolate inline-flex rounded-md shadow-sm mt-2">
-        <button on:click={handleDataProtectionOfficerYes} type="button" class={`relative inline-flex items-center rounded-l-md bg-white px-3 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-green-50 focus:z-10 ${dataProtectionOfficerYes? 'bg-green-700 text-white hover:bg-green-800': 'text-green-900'}`}>Yes</button>
-        <button on:click={handleDataProtectionOfficerNo} type="button" class={`relative -ml-px inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-red-50 focus:z-10 ${dataProtectionOfficerNo? 'bg-red-700 text-white hover:bg-red-800': 'text-red-900'}`}>No</button>
+        <button on:click={handleDataProtectionOfficerYes} type="button" class={`relative inline-flex items-center rounded-l-md px-3 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-green-50 focus:z-10 ${dataProtectionOfficerYes? 'bg-green-700 text-white hover:bg-green-800': 'text-green-900 bg-white'}`}>Yes</button>
+        <button on:click={handleDataProtectionOfficerNo} type="button" class={`relative -ml-px inline-flex items-center rounded-r-md px-3 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-red-50 focus:z-10 ${dataProtectionOfficerNo? 'bg-red-700 text-white hover:bg-red-800': 'text-red-900 bg-white'}`}>No</button>
       </span>
     </div>
 
