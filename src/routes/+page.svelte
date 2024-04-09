@@ -3,6 +3,8 @@
   import Footer from "$lib/components/Footer.svelte";
   import ControllerConfig from "../steps/ControllerConfig.svelte";
   import Recipients from "../steps/Recipients.svelte";
+  import AutomatedDecisionMaking from "../steps/AutomatedDecisionMaking.svelte";
+  import TBD from "../steps/TBD.svelte";
 
   let currentStep = 0;
 
@@ -19,7 +21,7 @@
     id: 'purpose-for-processing',
     completed: false,
     current: false,
-    component: Recipients,
+    component: TBD,
   }, {
     number: 3,
     title: 'Recipients of Data',
@@ -33,14 +35,14 @@
     id: 'automated-decision-making',
     completed: false,
     current: false,
-    component: Recipients,
+    component: AutomatedDecisionMaking,
   }, {
     number: 5,
     title: 'Transfers to 3rd Countries',
     id: 'transfers-to-3rd-countries',
     completed: false,
     current: false,
-    component: Recipients,
+    component: TBD,
   }];
 
   const handleNext = () => {
