@@ -5,6 +5,7 @@
   import Recipients from "../steps/Recipients.svelte";
   import AutomatedDecisionMaking from "../steps/AutomatedDecisionMaking.svelte";
   import TBD from "../steps/TBD.svelte";
+  import Transfers from "../steps/Transfers.svelte";
 
   let currentStep = 0;
 
@@ -42,7 +43,7 @@
     id: 'transfers-to-3rd-countries',
     completed: false,
     current: false,
-    component: TBD,
+    component: Transfers,
   }];
 
   const handleNext = () => {
