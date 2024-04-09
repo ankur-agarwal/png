@@ -13,11 +13,15 @@
 
   const handleYes = () => {
     selectedNo = false;
+    dataProtectionOfficerNo = false;
+    dataProtectionOfficerYes = false;
     selectedYes = !selectedYes;
   }
 
   const handleNo = () => {
     selectedYes = false;
+    dataProtectionOfficerNo = false;
+    dataProtectionOfficerYes = false;
     selectedNo = !selectedNo;
   }
 
