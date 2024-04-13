@@ -7,7 +7,7 @@
   import TBD from "../steps/TBD.svelte";
   import Transfers from "../steps/Transfers.svelte";
 
-  let currentStep = 0;
+  let currentStep = 2;
 
   const steps = [{
     number: 1,
@@ -73,22 +73,24 @@
 
 <div class="flex justify-center h-screen">
   <div class="flex flex-col h-full p-4">
-    <!-- Page Heading -->
-    <div class="min-w-0 max-w-7xl mt-8">
-      <h2 class="flex justify-center text-4xl font-semibold leading-7 text-gray-700 sm:truncate sm:text-4xl sm:tracking-tight">
-        Build your Privacy Notice
-      </h2>
+    <div class="flex flex-col overflow-scroll h-full">
+      <!-- Page Heading -->
+      <div class="min-w-0 max-w-7xl mt-8">
+        <h2 class="flex justify-center text-4xl font-semibold leading-7 text-gray-700 sm:truncate sm:text-4xl sm:tracking-tight">
+          Build your Privacy Notice
+        </h2>
 
-      <div class="mt-8">
-        <Stepper steps={steps} onClick={handleStepperClick} />
+        <div class="mt-8">
+          <Stepper steps={steps} onClick={handleStepperClick} />
+        </div>
       </div>
+
+      <main class="flex-1 max-w-7xl mt-8 h-3/4">
+        <div>
+          <svelte:component this={steps[currentStep].component}/>
+        </div>
+      </main>
     </div>
-
-    <main class="flex-1 max-w-7xl mt-8 h-3/4 overflow-scroll">
-      <div>
-        <svelte:component this={steps[currentStep].component}/>
-      </div>
-    </main>
 
     <Footer onNext={handleNext} />
   </div>
